@@ -1,26 +1,25 @@
+var bill = [100,200,50,500,70,30,400];
 
+const tip = [];
+const total = [];
 
-function Generate(){
-    var bill = [100,200,50,500,70,30,400];
-    console.log(`Without GST bill amount is ${bill}`);
-
+function Generate(bill){
     for(var i = 0; i <= bill.length; i++){
         if(bill[i] <= 100){
-        
-            var result = bill[i] + bill[i] * 15/100;
-            console.log('15% gst ' + result);
-          
+            tip.push(bill[i] * 15/100);
+            total.push(bill[i] + bill[i] * 15/100); 
         }
        else if(bill[i] > 100){
-            var result1 = bill[i] + bill[i] * 20/100;
-            console.log('20% gst ' + result1);
-
+            tip.push(bill[i] * 20/100);
+            total.push(bill[i] + bill[i] * 20/100);
         }
-    }
-
-  
-  
+    }  
 }
 
+Generate(bill);
 
-console.log(Generate());
+console.log('bill value ' + bill);
+console.log('calc tip ' + tip);
+console.log('total bill ' + total);
+
+
