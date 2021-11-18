@@ -1,14 +1,7 @@
-var user = {
-    name:'nishit',
-    profession: 'developer',
-    returnAge: function(age){
-        var age;
-        if (age > 18){
-            return 'Major';
-        }else{
-            return 'Minor';
-        }
-    }
+let colors = {
+    red: "#FF0000",
+    green: "#00FF00",
+    white: "#FFFFFF"
 }
-
-console.log(user.returnAge(15));
+var reverse = Object.assign({}, ...Object.entries(colors).map(([x,y]) => ({ [y]: x })))
+console.log(reverse);
